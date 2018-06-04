@@ -21,18 +21,18 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
   //   console.log(JSON.stringify(result.ops, undefined, 2));
   // });
 
-  // db.collection('Users').insertOne({
-  //   //_id = 123,
-  //   name: 'Seb',
-  //   age: 36,
-  //   location: 'Paris'
-  // }, (err, result) => {
-  //   if (err) {
-  //     return console.log('Unable to insert users', err);
-  //   }
-  //   console.log(JSON.stringify(result.ops, undefined, 2));
-  //   console.log(result.ops[0]._id.getTimestamp()); // decode la valeur de _id en timestamp
-  // });
+  db.collection('Users').insertOne({
+    //_id = 123,
+    name: 'Seb',
+    age: 36,
+    location: 'Paris'
+  }, (err, result) => {
+    if (err) {
+      return console.log('Unable to insert users', err);
+    }
+    console.log(JSON.stringify(result.ops, undefined, 2));
+    console.log(result.ops[0]._id.getTimestamp()); // decode la valeur de _id en timestamp
+  });
 
   client.close();
 });
